@@ -27,12 +27,12 @@
         }
 
         .logo-container {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             position: relative;
         }
 
         .game-logo-img {
-            max-width: 400px;
+            max-width: 360px;
             height: auto;
             animation: float 3s ease-in-out infinite;
             position: relative;
@@ -52,12 +52,12 @@
 
         .coming-soon {
             font-family: 'Orbitron', monospace;
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 900;
             color: #FFFFFF;
-            text-shadow: 3px 3px 0px #000000, 0 0 20px rgba(255, 215, 0, 0.8);
-            margin: 1.5rem 0;
-            letter-spacing: 0.15em;
+            text-shadow: 2px 2px 0px #000000, 0 0 18px rgba(255, 215, 0, 0.8);
+            margin: 1.2rem 0;
+            letter-spacing: 0.12em;
             animation: glow 2s ease-in-out infinite alternate;
             background: linear-gradient(45deg, #FFFFFF, #FFD700, #FFFFFF);
             -webkit-background-clip: text;
@@ -67,12 +67,12 @@
 
         @keyframes glow {
             from {
-                text-shadow: 3px 3px 0px #000000, 0 0 20px rgba(255, 215, 0, 0.6);
+                text-shadow: 2px 2px 0px #000000, 0 0 18px rgba(255, 215, 0, 0.6);
                 transform: scale(1);
             }
             to {
-                text-shadow: 3px 3px 0px #000000, 0 0 40px rgba(255, 215, 0, 1), 0 0 60px rgba(255, 255, 255, 0.4);
-                transform: scale(1.02);
+                text-shadow: 2px 2px 0px #000000, 0 0 35px rgba(255, 215, 0, 1), 0 0 50px rgba(255, 255, 255, 0.4);
+                transform: scale(1.015);
             }
         }
 
@@ -98,7 +98,7 @@
         }
 
         .left-decoration {
-            left: 80px;
+            left: 20px;
             background: linear-gradient(45deg, 
                 rgba(255, 140, 0, 0.15) 0%, 
                 rgba(255, 165, 0, 0.08) 50%, 
@@ -108,7 +108,7 @@
         }
 
         .right-decoration {
-            right: 80px;
+            right: 20px;
             background: linear-gradient(-45deg, 
                 rgba(255, 140, 0, 0.15) 0%, 
                 rgba(255, 165, 0, 0.08) 50%, 
@@ -133,17 +133,17 @@
             animation: pixelFloat 4s ease-in-out infinite;
         }
 
-        .left-decoration .pixel-block:nth-child(1) { top: 15%; left: 60px; animation-delay: 0s; }
-        .left-decoration .pixel-block:nth-child(2) { top: 30%; left: 40px; animation-delay: 1s; }
-        .left-decoration .pixel-block:nth-child(3) { top: 45%; left: 70px; animation-delay: 2s; }
-        .left-decoration .pixel-block:nth-child(4) { top: 60%; left: 35px; animation-delay: 1.5s; }
-        .left-decoration .pixel-block:nth-child(5) { top: 75%; left: 55px; animation-delay: 0.5s; }
+        .left-decoration .pixel-block:nth-child(1) { top: 15%; left: 80px; animation-delay: 0s; }
+        .left-decoration .pixel-block:nth-child(2) { top: 30%; left: 50px; animation-delay: 1s; }
+        .left-decoration .pixel-block:nth-child(3) { top: 45%; left: 100px; animation-delay: 2s; }
+        .left-decoration .pixel-block:nth-child(4) { top: 60%; left: 40px; animation-delay: 1.5s; }
+        .left-decoration .pixel-block:nth-child(5) { top: 75%; left: 70px; animation-delay: 0.5s; }
 
-        .right-decoration .pixel-block:nth-child(1) { top: 20%; right: 60px; animation-delay: 0.3s; }
-        .right-decoration .pixel-block:nth-child(2) { top: 35%; right: 40px; animation-delay: 1.3s; }
-        .right-decoration .pixel-block:nth-child(3) { top: 50%; right: 70px; animation-delay: 2.3s; }
-        .right-decoration .pixel-block:nth-child(4) { top: 65%; right: 35px; animation-delay: 1.8s; }
-        .right-decoration .pixel-block:nth-child(5) { top: 80%; right: 55px; animation-delay: 0.8s; }
+        .right-decoration .pixel-block:nth-child(1) { top: 20%; right: 80px; animation-delay: 0.3s; }
+        .right-decoration .pixel-block:nth-child(2) { top: 35%; right: 50px; animation-delay: 1.3s; }
+        .right-decoration .pixel-block:nth-child(3) { top: 50%; right: 100px; animation-delay: 2.3s; }
+        .right-decoration .pixel-block:nth-child(4) { top: 65%; right: 40px; animation-delay: 1.8s; }
+        .right-decoration .pixel-block:nth-child(5) { top: 80%; right: 70px; animation-delay: 0.8s; }
 
         @keyframes pixelFloat {
             0%, 100% {
@@ -172,6 +172,199 @@
             to { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
+        /* Game themed decorations */
+        .game-ui-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-coin {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border-radius: 50%;
+            border: 3px solid #B8860B;
+            animation: floatCoin 6s ease-in-out infinite;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8B4513;
+            font-weight: bold;
+        }
+
+        @keyframes floatCoin {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-20px) scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        .power-up {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            border-radius: 8px;
+            border: 3px solid #000;
+            animation: pulsePowerUp 3s ease-in-out infinite;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 0 #000;
+        }
+
+        @keyframes pulsePowerUp {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+                box-shadow: 0 4px 0 #000;
+            }
+            50% {
+                transform: scale(1.15) rotate(180deg);
+                box-shadow: 0 6px 0 #000, 0 6px 15px rgba(255, 107, 107, 0.4);
+            }
+        }
+
+        .obstacle {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: linear-gradient(45deg, #8B4513, #A0522D);
+            border-radius: 4px;
+            border: 2px solid #000;
+            animation: slideObstacle 8s linear infinite;
+        }
+
+        @keyframes slideObstacle {
+            0% {
+                transform: translateX(-100px) rotate(0deg);
+                opacity: 0;
+            }
+            10%, 90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .corner-decorations {
+            position: fixed;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .top-left-corner {
+            top: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(255, 215, 0, 0.3);
+            border-right: none;
+            border-bottom: none;
+            border-radius: 20px 0 0 0;
+        }
+
+        .top-right-corner {
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(255, 215, 0, 0.3);
+            border-left: none;
+            border-bottom: none;
+            border-radius: 0 20px 0 0;
+        }
+
+        .bottom-left-corner {
+            bottom: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(255, 215, 0, 0.3);
+            border-right: none;
+            border-top: none;
+            border-radius: 0 0 0 20px;
+        }
+
+        .bottom-right-corner {
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(255, 215, 0, 0.3);
+            border-left: none;
+            border-top: none;
+            border-radius: 0 0 20px 0;
+        }
+
+        .score-display {
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: #FFD700;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            border: 3px solid #FFD700;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.8rem;
+            z-index: 3;
+            animation: scoreGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes scoreGlow {
+            from {
+                box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            }
+            to {
+                box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            }
+        }
+
+        .energy-bar {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 3px solid #FFD700;
+            border-radius: 15px;
+            overflow: hidden;
+            z-index: 3;
+        }
+
+        .energy-fill {
+            width: 75%;
+            height: 100%;
+            background: linear-gradient(90deg, #FF6B6B, #FFA500, #FFD700);
+            animation: energyPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes energyPulse {
+            0%, 100% {
+                width: 75%;
+            }
+            50% {
+                width: 85%;
+            }
+        }
+
         .particle {
             position: absolute;
             background: rgba(255, 255, 255, 0.1);
@@ -197,7 +390,7 @@
         }
 
         .game-preview-img {
-            max-width: 300px;
+            max-width: 280px;
             height: auto;
             border: 4px solid #000;
             border-radius: 15px;
@@ -208,21 +401,74 @@
 
         @media (max-width: 768px) {
             .game-logo-img {
-                max-width: 280px;
+                max-width: 260px;
             }
             
             .coming-soon {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                margin: 1rem 0;
+            }
+            
+            .game-preview-img {
+                max-width: 240px;
+                margin: 0.8rem auto;
             }
 
             .side-decorations {
                 display: none;
+            }
+
+            .corner-decorations {
+                display: none;
+            }
+
+            .score-display {
+                font-size: 0.6rem;
+                padding: 0.4rem 1rem;
+            }
+
+            .energy-bar {
+                width: 150px;
+                height: 16px;
             }
         }
     </style>
 </head>
 <body>
     <div class="particles" id="particles"></div>
+    
+    <!-- Game UI Elements -->
+    <div class="game-ui-elements">
+        <!-- Floating Coins -->
+        <div class="floating-coin" style="top: 15%; left: 10%; animation-delay: 0s;">₹</div>
+        <div class="floating-coin" style="top: 30%; right: 12%; animation-delay: 1s;">¢</div>
+        <div class="floating-coin" style="top: 60%; left: 8%; animation-delay: 2s;">₹</div>
+        <div class="floating-coin" style="top: 80%; right: 15%; animation-delay: 3s;">¢</div>
+        
+        <!-- Power-ups -->
+        <div class="power-up" style="top: 25%; left: 5%; animation-delay: 0.5s;">⚡</div>
+        <div class="power-up" style="top: 50%; right: 8%; animation-delay: 1.5s;">🔥</div>
+        <div class="power-up" style="top: 75%; left: 12%; animation-delay: 2.5s;">💎</div>
+        
+        <!-- Moving Obstacles -->
+        <div class="obstacle" style="top: 40%; animation-delay: 0s;"></div>
+        <div class="obstacle" style="top: 65%; animation-delay: 2s;"></div>
+        <div class="obstacle" style="top: 20%; animation-delay: 4s;"></div>
+    </div>
+    
+    <!-- Corner Decorations -->
+    <div class="corner-decorations top-left-corner"></div>
+    <div class="corner-decorations top-right-corner"></div>
+    <div class="corner-decorations bottom-left-corner"></div>
+    <div class="corner-decorations bottom-right-corner"></div>
+    
+    <!-- Score Display -->
+    <div class="score-display">HIGH SCORE: 999,999</div>
+    
+    <!-- Energy Bar -->
+    <div class="energy-bar">
+        <div class="energy-fill"></div>
+    </div>
     
     <!-- Sol dekorasyon -->
     <div class="side-decorations left-decoration">
@@ -286,6 +532,37 @@
         for(let i = 0; i < 15; i++) {
             setTimeout(createParticle, i * 200);
         }
+
+        // Rastgele bonus coinler oluştur
+        function createBonusCoin() {
+            const coin = document.createElement('div');
+            coin.className = 'floating-coin';
+            coin.innerHTML = Math.random() > 0.5 ? '₹' : '¢';
+            coin.style.top = Math.random() * 80 + 10 + '%';
+            coin.style.left = Math.random() * 80 + 10 + '%';
+            coin.style.animationDelay = '0s';
+            coin.style.zIndex = '1';
+            
+            document.querySelector('.game-ui-elements').appendChild(coin);
+            
+            setTimeout(() => {
+                coin.remove();
+            }, 6000);
+        }
+
+        // Her 8 saniyede bir bonus coin oluştur
+        setInterval(createBonusCoin, 8000);
+
+        // Score animasyonu
+        function updateScore() {
+            const scoreElement = document.querySelector('.score-display');
+            const currentScore = parseInt(scoreElement.textContent.replace(/[^0-9]/g, ''));
+            const newScore = currentScore + Math.floor(Math.random() * 100);
+            scoreElement.textContent = `HIGH SCORE: ${newScore.toLocaleString()}`;
+        }
+
+        // Score'u her 5 saniyede güncelle
+        setInterval(updateScore, 5000);
     </script>
 </body>
 </html> 
